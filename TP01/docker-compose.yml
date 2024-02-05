@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    networks:
+      - tp01-network
+    volumes:
+      - ./db/database:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=usr
+      - POSTGRES_PASSWORD=pwd
+  api:
+    container_name: api
+    build:
+      context: ./simple-api-student-main
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - tp01-network
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_USER=usr
+      - POSTGRES_PASSWORD=pwd
+  web:
+    container_name: web
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - tp01-network
+    depends_on:
+      - api
+
+networks:
+  tp01-network:
