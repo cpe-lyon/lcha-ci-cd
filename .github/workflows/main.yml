@@ -20,5 +20,5 @@ jobs:
      #finally build your app with the latest command
       - name: Build and test with Maven
         run: 
-        mvn clean verify ../TP01/simple-api-student-main/pom.xml
-        mvn clean verify ../TP01/simpleapi/pom.xml
+        - mvn clean verify ../TP01/simple-api-student-main/pom.xml
+        - mvn clean verify ../TP01/simpleapi/pom.xml
