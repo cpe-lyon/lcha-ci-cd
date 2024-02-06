@@ -3,12 +3,11 @@ on:
   push:
     branches: 
       - main
-  pull_request:
+  workflow-run: test-backend
 
 jobs:
   # define job to build and publish docker image
   build-and-push-docker-image:
-    workflow-run: test-backend
     # run only when code is compiling and tests are passing
     runs-on: ubuntu-22.04
     # steps to perform in job
