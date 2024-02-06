@@ -24,10 +24,10 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test simple-api-student with Maven
-        run: cd TP01/simple-api-student-main && mvn clean verify
+        run: mvn clean verify --file ./TP01/simple-api-student-main/pom.xml
 
       - name: Build and test simple-api with Maven
-        run: cd TP01/simpleapi && mvn clean verify
+        run: mvn clean verify --file ./TP01/simpleapi/pom.xml
 
   # define job to build and publish docker image
   build-and-push-docker-image:
