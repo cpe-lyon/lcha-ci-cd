@@ -24,10 +24,10 @@ jobs:
 
      #finally build your app with the latest command
       - name: Build and test simple-api-student with Maven
-        run: mvn clean verify --file ./TP01/simple-api-student-main/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=cpe-lyon-12345_ci-cd -Dsonar.organization=cpe-lyon-12345 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./TP01/simple-api-student-main/pom.xml
 
       - name: Build and test simple-api with Maven
-        run: mvn clean verify --file ./TP01/simpleapi/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=cpe-lyon-12345_ci-cd -Dsonar.organization=cpe-lyon-12345 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }} --file ./TP01/simpleapi/pom.xml
 
   # define job to build and publish docker image
   build-and-push-docker-image:
