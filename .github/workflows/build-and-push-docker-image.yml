@@ -1,9 +1,9 @@
-name: CI devops 2024
+name: build-and-push-docker-image
 on:
-  workflow-run: test-backend
   push:
     branches: 
       - main
+  workflow-run: test-backend
 
 jobs:
   # define job to build and publish docker image
