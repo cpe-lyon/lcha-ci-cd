@@ -3,7 +3,10 @@ on:
   push:
     branches: 
       - main
-  workflow-run: test-backend
+  workflow_run:
+    workflows: ["test-backend"]
+    types:
+      - completed
 
 jobs:
   # define job to build and publish docker image
