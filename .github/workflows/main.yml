@@ -18,7 +18,8 @@ jobs:
         uses: actions/setup-java@v3
 
      #finally build your app with the latest command
-      - name: Build and test with Maven
-        run: 
-        - mvn clean verify ../TP01/simple-api-student-main/pom.xml
-        - mvn clean verify ../TP01/simpleapi/pom.xml
+      - name: Build and test simple-api-student with Maven
+        run: mvn clean verify ../TP01/simple-api-student-main/pom.xml
+      
+      - name: Build and test simple-api with Maven
+        run: mvn clean verify ../TP01/simpleapi/pom.xml
