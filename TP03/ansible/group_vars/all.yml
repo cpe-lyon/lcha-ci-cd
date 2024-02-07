@@ -1,4 +1,4 @@
-DATABASE_URL: jdbc:postgresql://database:5432/db
+DATABASE_URL: jdbc:postgresql://database:5432
 POSTGRES_DB: db
 POSTGRES_USER: usr
 POSTGRES_PASSWORD: pwd
