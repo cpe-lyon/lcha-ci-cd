@@ -4,12 +4,12 @@
 
   roles:
     - role: install-docker
-    - role: clean-container
+    # - role: clean-container
     - role: create-network
     - role: launch-database
     - role: launch-app
     - role: launch-front
     - role: launch-proxy
 
-vars:
-  ansible_user: centos
+  vars:
+    ansible_user: centos
