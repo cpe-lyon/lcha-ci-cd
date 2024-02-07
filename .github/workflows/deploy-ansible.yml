@@ -1,0 +1,25 @@
+name: deploy-ansible
+on: 
+  push:
+    branches: 
+      - main
+      - develop
+  workflow_run:
+    workflows: ["test-backend"]
+    types:
+      - completed
+  
+jobs:
+  deploy-ansible:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2.5.0
+
+      - name: Install Ansible
+        run: sudo apt update && sudo apt install -y ansible
+
+      - name: Run Ansible playbook
+        run: ansible-playbook -i TP03/ansible/hosts TP03/ansible/playbook-clean.yml
+```
