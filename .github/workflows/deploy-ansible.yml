@@ -1,11 +1,8 @@
 name: deploy-ansible
 on: 
-  push:
-    branches: 
-      - main
-      - develop
   workflow_run:
     workflows: ["test-backend"]
+    branches: main
     types:
       - completed
   
