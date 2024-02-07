@@ -1,7 +1,7 @@
 name: deploy-ansible
 on: 
   workflow_run:
-    workflows: ["build-and-push-docker-image"]
+    workflows: "build-and-push-docker-image"
     branches: main
     types:
       - completed
