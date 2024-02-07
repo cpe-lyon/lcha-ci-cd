@@ -4,7 +4,7 @@
     docker_container:
       name: frontend
       image: louischarnay/tp03-frontend:latest
-      state: restarted
+      state: started
       networks:
         - name: tp03-network
       ports:

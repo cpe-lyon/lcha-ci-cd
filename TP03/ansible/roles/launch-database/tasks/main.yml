@@ -4,7 +4,7 @@
     docker_container:
       name: database
       image: louischarnay/tp01-postgres:1.0
-      state: restarted
+      state: started
       env:
         POSTGRES_USER: usr
         POSTGRES_PASSWORD: pwd
