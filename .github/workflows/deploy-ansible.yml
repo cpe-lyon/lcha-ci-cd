@@ -19,9 +19,9 @@ jobs:
 
       - name: Run Ansible playbook
         uses: dawidd66/action-ansible-playbook@v2
-        with:
-          playbook: TP03/ansible/playbook.yml
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          inventory: 
-            [all]
-            louis.charnay.takima.cloud
+          with:
+            playbook: TP03/ansible/playbook.yml
+            key: ${{ secrets.SSH_PRIVATE_KEY }}
+            inventory: 
+              [all]
+              louis.charnay.takima.cloud
