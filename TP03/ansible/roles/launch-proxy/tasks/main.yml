@@ -3,7 +3,7 @@
   - name: Run HTTPD
     docker_container:
       name: httpd
-      image: leondumestre/tp-devops-httpd:latest
+      image: louischarnay/tp01-web:latest
       networks:
         - name: tp03-network
       ports:

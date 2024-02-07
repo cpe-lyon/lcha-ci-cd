@@ -3,7 +3,7 @@
   - name: Run App
     docker_container:
       name: frontend
-      image: leondumestre/tp-devops-front:latest
+      image: louischarnay/tp03-frontend:latest
       networks:
         - name: tp03-network
       ports:

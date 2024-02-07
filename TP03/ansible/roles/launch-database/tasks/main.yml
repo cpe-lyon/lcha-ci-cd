@@ -3,7 +3,7 @@
   - name: Run Database
     docker_container:
       name: database
-      image: leondumestre/tp-devops-database:1.0
+      image: louischarnay/tp01-postgres:1.0
       env:
         POSTGRES_USER: usr
         POSTGRES_PASSWORD: pwd
