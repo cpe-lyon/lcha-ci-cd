@@ -11,5 +11,3 @@
         POSTGRES_PASSWORD: pwd
       networks:
         - name: tp03-network
-      ports:
-        - "5432:5432"
