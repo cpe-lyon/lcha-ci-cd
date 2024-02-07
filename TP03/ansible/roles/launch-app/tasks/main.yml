@@ -4,6 +4,7 @@
     docker_container:
       name: backend
       image: louischarnay/tp01-api:1.0
+      state: restarted
       env:
         DATABASE_URL: jdbc:postgresql://postgres:5432/db
         DATABASE_USER: usr

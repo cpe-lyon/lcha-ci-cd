@@ -4,6 +4,7 @@
     docker_container:
       name: httpd
       image: louischarnay/tp01-web:latest
+      state: restarted
       networks:
         - name: tp03-network
       ports:

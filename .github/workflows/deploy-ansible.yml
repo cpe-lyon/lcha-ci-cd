@@ -14,9 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
 
-      - name: Install Ansible
-        run: sudo apt update && sudo apt install -y ansible
-
       - name: Run Ansible playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
