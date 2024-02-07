@@ -1,3 +1,0 @@
----
-# vars file for roles/launch-database
-ansible_user: centos

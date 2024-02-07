@@ -1,3 +1,0 @@
----
-# vars file for roles/launch-proxy
-ansible_user: centos

@@ -1,3 +1,0 @@
----
-# vars file for roles/create-network
-ansible_user: centos

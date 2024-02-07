@@ -10,3 +10,6 @@
     - role: launch-app
     - role: launch-front
     - role: launch-proxy
+
+vars:
+  ansible_user: centos

@@ -1,3 +1,0 @@
----
-# vars file for roles/launch-front
-ansible_user: centos
