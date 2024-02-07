@@ -18,7 +18,7 @@ jobs:
         run: sudo apt update && sudo apt install -y ansible
 
       - name: Run Ansible playbook
-        uses: dawidd66/action-ansible-playbook@v2
+        uses: dawidd6/action-ansible-playbook@v2
         with:
           playbook: TP03/ansible/playbook.yml
           key: ${{ secrets.SSH_PRIVATE_KEY }}
