@@ -1,0 +1,11 @@
+---
+# tasks file for roles/launch-database
+  - name: Run Database
+    docker_container:
+      name: database
+      image: leondumestre/tp-devops-database:1.0
+      env:
+        POSTGRES_USER: usr
+        POSTGRES_PASSWORD: pwd
+      networks:
+        - name: tp03-network

@@ -1,0 +1,10 @@
+---
+# tasks file for roles/launch-front
+  - name: Run App
+    docker_container:
+      name: frontend
+      image: leondumestre/tp-devops-front:latest
+      networks:
+        - name: tp03-network
+      ports:
+        - "80:80"
