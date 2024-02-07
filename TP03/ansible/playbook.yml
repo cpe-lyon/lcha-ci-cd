@@ -3,9 +3,10 @@
   become: true
 
   roles:
-    # - role: install-docker
+    - role: install-docker
+    - role: clean-container
     - role: create-network
     - role: launch-database
     - role: launch-app
     - role: launch-front
-    # - role: launch-proxy
+    - role: launch-proxy
