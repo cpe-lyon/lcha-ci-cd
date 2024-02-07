@@ -2,14 +2,15 @@
 # tasks file for roles/launch-app
   - name: Run App
     docker_container:
-      name: backend
-      image: louischarnay/tp01-api:1.0
+      name: "{{ BACKEND_NAME}}"
+      image: "{{ BACKEND_IMAGE }}"
       state: started
       env:
-        DATABASE_URL: jdbc:postgresql://postgres:5432/db
-        POSTGRES_USER: usr
-        POSTGRES_PASSWORD: pwd
+        DATABASE_URL: "{{ DATABASE_URL }}"
+        POSTGRES_USER: "{{ POSTGRES_USER }}"
+        POSTGRES_PASSWORD: "{{ POSTGRES_PASSWORD }}"
+        POSTGRES_DB: "{{ POSTGRES_DB }}"
       networks:
-        - name: tp03-network
+        - name: "{{ NETWORK_NAME }}"
       ports:
         - "8080:8080"

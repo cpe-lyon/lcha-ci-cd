@@ -2,10 +2,10 @@
 # tasks file for roles/launch-proxy
   - name: Run HTTPD
     docker_container:
-      name: httpd
-      image: louischarnay/tp01-web:1.0
+      name: "{{ HTTPD_NAME }}"
+      image: "{{ HTTPD_IMAGE }}"
       state: started
       networks:
-        - name: tp03-network
+        - name: "{{ NETWORK_NAME }}"
       ports:
         - "80:80"

@@ -2,12 +2,12 @@
 # tasks file for roles/launch-database
   - name: Run Database
     docker_container:
-      name: database
-      image: louischarnay/tp01-postgres:1.0
+      name: "{{ DATABASE_NAME }}"
+      image: "{{ DATABASE_IMAGE }}"
       state: started
       env:
-        POSTGRES_DB: db
-        POSTGRES_USER: usr
-        POSTGRES_PASSWORD: pwd
+        POSTGRES_DB: "{{ POSTGRES_DB }}"
+        POSTGRES_USER: "{{ POSTGRES_USER }}"
+        POSTGRES_PASSWORD: "{{ POSTGRES_PASSWORD }}"
       networks:
-        - name: tp03-network
+        - name: "{{ NETWORK_NAME }}"
