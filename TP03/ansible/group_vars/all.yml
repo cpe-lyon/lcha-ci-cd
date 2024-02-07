@@ -1,0 +1,15 @@
+DATABASE_URL: jdbc:postgresql://database:5432/db
+POSTGRES_DB: db
+POSTGRES_USER: usr
+POSTGRES_PASSWORD: pwd
+
+HTTPD_IMAGE: louischarnay/tp01-web:1.0
+FRONTEND_IMAGE: louischarnay/tp03-frontend:1.0
+BACKEND_IMAGE: louischarnay/tp01-api:1.0
+DATABASE_IMAGE: louischarnay/tp01-postgres:1.0
+
+HTTPD_NAME: httpd
+FRONTEND_NAME: frontend
+BACKEND_NAME: backend
+DATABASE_NAME: database
+NETWORK_NAME: tp03-network

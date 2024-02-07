@@ -2,10 +2,10 @@
 # tasks file for roles/launch-front
   - name: Run App
     docker_container:
-      name: frontend
-      image: louischarnay/tp03-frontend:1.0
+      name: "{{ FRONTEND_NAME }}"
+      image: "{{ FRONTEND_IMAGE }}"
       state: started
       networks:
-        - name: tp03-network
+        - name: "{{ NETWORK_NAME }}"
       ports:
-        - "8081:80"
+        - "80:80"
