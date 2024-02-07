@@ -22,4 +22,3 @@ jobs:
 
       - name: Run Ansible playbook
         run: ansible-playbook -i TP03/ansible/hosts TP03/ansible/playbook-clean.yml
-```
