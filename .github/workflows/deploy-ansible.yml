@@ -3,13 +3,13 @@ on:
   workflow_run:
     workflows: "build-and-push-docker-image"
     branches: main
-    types:
-      - completed
+    types: completed
   
 jobs:
   deploy-ansible:
-    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-22.04
+    # run only when code is compiling and tests are passing
+    if: github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2.5.0
@@ -18,4 +18,8 @@ jobs:
         run: sudo apt update && sudo apt install -y ansible
 
       - name: Run Ansible playbook
-        run: ansible-playbook -i TP03/ansible/hosts TP03/ansible/playbook-clean.yml
+        uses: dawid66/action-ansible-pklaybook@v2
+        with:
+          playbook: TP03/ansible/playbook.yml
+          inventory: TP03/ansible/hosts
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
