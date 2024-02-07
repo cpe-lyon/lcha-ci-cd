@@ -3,7 +3,7 @@
   - name: Run App
     docker_container:
       name: frontend
-      image: louischarnay/tp03-frontend:latest
+      image: louischarnay/tp03-frontend:1.0
       state: started
       networks:
         - name: tp03-network
