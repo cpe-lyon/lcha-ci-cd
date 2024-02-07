@@ -18,8 +18,10 @@ jobs:
         run: sudo apt update && sudo apt install -y ansible
 
       - name: Run Ansible playbook
-        uses: dawidd66/action-ansible-pklaybook@v2
+        uses: dawidd66/action-ansible-playbook@v2
         with:
           playbook: TP03/ansible/playbook.yml
-          inventory: TP03/ansible/hosts
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          inventory: 
+            [all]
+            louis.charnay.takima.cloud
