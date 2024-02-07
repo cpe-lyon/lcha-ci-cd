@@ -22,6 +22,6 @@ jobs:
         with:
           playbook: TP03/ansible/playbook.yml
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          inventory: 
+          inventory: |
             [all]
             louis.charnay.takima.cloud
