@@ -4,7 +4,7 @@
     docker_container:
       name: "{{ HTTPD_NAME }}"
       image: "{{ HTTPD_IMAGE }}"
-      state: absent
+      state: started
       networks:
         - name: "{{ NETWORK_NAME }}"
       ports:

@@ -4,6 +4,6 @@
     docker_container:
       name: "{{ FRONTEND_NAME }}"
       image: "{{ FRONTEND_IMAGE }}"
-      state: absent
+      state: started
       networks:
         - name: "{{ NETWORK_NAME }}"

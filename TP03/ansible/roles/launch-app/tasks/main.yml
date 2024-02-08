@@ -4,7 +4,7 @@
     docker_container:
       name: "{{ BACKEND_NAME}}-1" 
       image: "{{ BACKEND_IMAGE }}"
-      state: absent
+      state: started
       env:
         DATABASE_URL: "{{ DATABASE_URL }}"
         POSTGRES_USER: "{{ POSTGRES_USER }}"
@@ -16,7 +16,7 @@
     docker_container:
       name: "{{ BACKEND_NAME}}-2" 
       image: "{{ BACKEND_IMAGE }}"
-      state: absent
+      state: started
       env:
         DATABASE_URL: "{{ DATABASE_URL }}"
         POSTGRES_USER: "{{ POSTGRES_USER }}"
