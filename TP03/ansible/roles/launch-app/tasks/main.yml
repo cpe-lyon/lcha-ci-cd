@@ -1,10 +1,10 @@
 ---
 # tasks file for roles/launch-app
-  - name: Run App
+  - name: Run App-1
     docker_container:
-      name: "{{ BACKEND_NAME}}"
+      name: "{{ BACKEND_NAME}}-1" 
       image: "{{ BACKEND_IMAGE }}"
-      state: started
+      state: absent
       env:
         DATABASE_URL: "{{ DATABASE_URL }}"
         POSTGRES_USER: "{{ POSTGRES_USER }}"
@@ -12,5 +12,15 @@
         POSTGRES_DB: "{{ POSTGRES_DB }}"
       networks:
         - name: "{{ NETWORK_NAME }}"
-      ports:
-        - "8080:8080"
+  - name: Run App-2
+    docker_container:
+      name: "{{ BACKEND_NAME}}-2" 
+      image: "{{ BACKEND_IMAGE }}"
+      state: absent
+      env:
+        DATABASE_URL: "{{ DATABASE_URL }}"
+        POSTGRES_USER: "{{ POSTGRES_USER }}"
+        POSTGRES_PASSWORD: "{{ POSTGRES_PASSWORD }}"
+        POSTGRES_DB: "{{ POSTGRES_DB }}"
+      networks:
+        - name: "{{ NETWORK_NAME }}"
