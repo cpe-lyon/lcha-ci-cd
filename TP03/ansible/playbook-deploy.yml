@@ -14,7 +14,7 @@
   - name: Run Database
     docker_container:
       name: database
-      image: leondumestre/tp-devops-database:1.0
+      image: louischarnay/tp01-postgres:1.0
       env:
         POSTGRES_USER: usr
         POSTGRES_PASSWORD: pwd
@@ -24,7 +24,7 @@
   - name: Run App
     docker_container:
       name: backend
-      image: leondumestre/tp-devops-backend:1.0
+      image: louischarnay/tp01-api:1.0
       env:
         DATABASE_URL: jdbc:postgresql://database:5432/db
         DATABASE_USER: usr
@@ -37,7 +37,7 @@
   - name: Run HTTPD
     docker_container:
       name: httpd
-      image: leondumestre/tp-devops-httpd:1.0
+      image: louischarnay/tp01-web:1.0
       networks:
         - name: tp03-network
       ports:

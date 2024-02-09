@@ -31,7 +31,7 @@ all:
   - name: Run Database
     docker_container:
       name: database
-      image: leondumestre/tp-devops-database:1.0
+      image: louischarnay/tp01-postgres:1.0
       env:
         POSTGRES_USER: usr
         POSTGRES_PASSWORD: pwd
@@ -41,20 +41,18 @@ all:
   - name: Run App
     docker_container:
       name: backend
-      image: leondumestre/tp-devops-backend:1.0
+      image: louischarnay/tp01-api:1.0
       env:
         DATABASE_URL: jdbc:postgresql://database:5432/db
         DATABASE_USER: usr
         DATABASE_PASSWORD: pwd
       networks:
         - name: tp03-network
-      ports:
-        - "8080:8080"
 
   - name: Run HTTPD
     docker_container:
       name: httpd
-      image: leondumestre/tp-devops-httpd:1.0
+      image: louischarnay/tp01-web:1.0
       networks:
         - name: tp03-network
       ports:
@@ -70,6 +68,30 @@ This command will ping all the hosts in the inventory file `inventories/setup.ym
 `ansible-playbook -i inventories/setup.yml playbook.yml`
 
 This command will execute the playbook `playbook.yml` on all the hosts in the inventory file `inventories/setup.yml`.
+
+## Roles
+
+```yml
+- hosts: all
+  gather_facts: false
+  become: true
+
+  roles:
+    - role: install-docker
+    # - role: clean-container
+    - role: create-network
+    - role: launch-database
+    - role: launch-app
+    - role: launch-front
+    - role: launch-proxy
+
+  vars:
+    ansible_user: centos
+```
+
+The role is a way to organize the playbook. It allows to define a set of tasks that can be reused in multiple playbooks. The role is defined in a directory with the following structure:
+
+With this configuration, we can execute the playbook `playbook.yml` and it will execute all the roles in the order defined in the file.
 
 ## Load Balancing
 
